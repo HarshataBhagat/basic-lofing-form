@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="main-cont">
+        <div class="cont">
+            <header>Login From</header>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="notification">
+                {{messages[0]}} 
+            </div>
+            {% endif %}
+            {% endwith %}
+            <form action="/login" method="POST">  
+                <div class="input-field">
+                <input type="text" name="email" required>
+                <label>Email</label>
+                </div>
+                <div class="input-field">
+                <input type="password"  name="password" required>
+                <label>Password</label>
+                </div> 
+                <div class="button">
+                    <div class="inner"></div>
+                    <button>Login</button>
+                </div>
+                <div class="signup">Not a member? <a href="/register">Signup now!</a></div>
+            </form>
+            <div class="authh">or login with</div>
+            <div class="social-menu">
+                <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+            
+        
+          
+  {% endblock %}

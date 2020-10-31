@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="main-cont">
+        <div class="cont">
+            <header>Signup</header>
+            
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="notification">
+                {{messages[0]}} Please go to <a href="login">Login page</a>
+            </div>
+            {% endif %}
+            {% endwith %}
+            
+            <form action="/register" method="POST">
+                <div class="input-field">
+                    <input type="text" name="fname" required>
+                    <label>First Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="lname" required>
+                    <label>Last Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="uname" required>
+                    <label>User Name</label>
+                </div>  
+                <div class="input-field">
+                    <input type="text" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-field">
+                <input type="password"  name="password" required>
+                <label>Password</label>
+                </div> 
+                <div class="button">
+                    <div class="inner"></div>
+                    <button>SINGUP</button>
+                </div>
+                <div class="signup">One of us? <a href="/login">LOGIN</a></div>
+            </form>
+        </div> 
+    </div>        
+ {% endblock%} 
